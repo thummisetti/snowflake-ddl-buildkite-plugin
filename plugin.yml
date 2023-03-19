@@ -1,8 +1,19 @@
-name: Library Example
-description: An example plugin for adding your own library of commands to expose to build jobs
-author: https://github.com/buildkite
+name: snowflake-ddl-deploy
+description: Deploys SQL from newly added files in the mentioned path/repo
+author: https://github.com/thummisetti
 requirements:
   - docker
 configuration:
-  properties: {}
+  properties:
+    snowflake_account:
+      type: string
+    snowflake_user:
+      type: string
+    prod_build_branch:
+      type: string
+    fail_pipeline_on_first_exception:
+      type: boolean
+  required:
+    - snowflake_account
+    - snowflake_user
   additionalProperties: false
