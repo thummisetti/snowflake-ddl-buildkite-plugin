@@ -1,4 +1,4 @@
-name: snowflake-ddl-deploy
+name: snowflake-ddl
 description: Deploys SQL from newly added files in the mentioned path/repo
 author: https://github.com/thummisetti
 requirements:

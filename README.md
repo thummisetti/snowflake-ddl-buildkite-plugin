@@ -7,12 +7,12 @@ It works by providing [an `environment` hook](hooks/environment) which updates `
 
 ## Usage
 
-```yml
+```yaml
 steps:
-  # Run the included new-ddl-deploy script that runs a Docker container
-  - command: new-ddl-deploy
-    plugins:
-      - snowflake-ddl-buildkite-plugin#v1.0.1: ~
+  - plugins:
+      - snowflake-ddl-buildkite-plugin#v1.0.1:
+          snowflake_account: rippling-warehouse
+          snowflake_user: snowflake_ddl_user
 ```
 
 ## Configuration
@@ -23,7 +23,7 @@ steps:
 
 The full name of the snowflake account you want to deploy to.
 
-Example: `snowflake-company`
+Example: `rippling`
 
 ### `snowflake_user` (required, string)
 
@@ -46,6 +46,7 @@ Whether to fail pipeline as soon as there is one failure.
 Example: `true`
 
 Default: `true`
+
 
 ## License
 
